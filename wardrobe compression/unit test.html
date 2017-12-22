@@ -1,0 +1,20 @@
+<html>
+<head>
+  <script type='text/javascript' charset="UTF-8" src='wcompress.js'></script>
+  <script type="text/javascript">
+    function test() {
+      const input = document.getElementById("input").value;
+      const array = string2array(input);
+      const bitarray = array2bit(array);
+      const base64 = bit2Base64(bitarray);
+      document.getElementById("output").innerHTML = "base64: " + base64 + "<br/>" + "decoded: " + base64ToBit(base64) + "<br/>" + "array: " + bit2array(base64ToBit(base64));
+    }
+  </script>
+</head>
+<body>
+  <textarea id="input" cols=40 rows=10>001,002,004,012,023,045</textarea>
+  <p>
+  <button onclick="test()">test</button>
+  <div id="output"/>
+</body>
+</html>
